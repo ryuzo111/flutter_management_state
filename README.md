@@ -19,6 +19,40 @@ samples, guidance on mobile development, and a full API reference.
 ### できること
 Flutterで作成したアプリ内で、データを保存したり、読み出したりできるようになります。（ローカルに保存読み込むができる）
 アプリを閉じて再起動してもデータは残り続ける
-インストール
+
+### インストール
 ```
+dependencies:
+  flutter:
+    sdk: flutter
+  shared_preferences: ^0.5.4+5 # これを追記
+# 省略
+```
+
+```
+import 'package:shared_preferences/shared_preferences.dart'; 
+```
+
+### 使い方
+インスタンスを取得
+```
+final SharedPreferences prefs = await SharedPreferences.getInstance();
+```
+int型を保存
+```
+prefs.setInt('counter', 123);
+```
+読み込む
+```
+prefs.getInt('counter') ?? 0;
+```
+
+```
+prefs.setStringList('my_string_list', ['apple', 'orange', 'grape']);
+prefs.getStringList('my_string_list') ?? [];
+```
+データ削除
+```
+final SharedPreferences prefs = await SharedPreferences.getInstance();
+prefs.remove('counter');
 ```

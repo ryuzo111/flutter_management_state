@@ -14,3 +14,11 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Shared Preferencesの使い方
+### できること
+Flutterで作成したアプリ内で、データを保存したり、読み出したりできるようになります。（ローカルに保存読み込むができる）
+アプリを閉じて再起動してもデータは残り続ける
+インストール
+```
+```

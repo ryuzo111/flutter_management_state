@@ -25,7 +25,7 @@ Flutterで作成したアプリ内で、データを保存したり、読み出�
 dependencies:
   flutter:
     sdk: flutter
-  shared_preferences: ^0.5.4+5 # これを追記
+  shared_preferences: ^0.5.4+5 # これを追記です
 # 省略
 ```
 

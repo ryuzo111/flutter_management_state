@@ -56,3 +56,9 @@ prefs.getStringList('my_string_list') ?? [];
 final SharedPreferences prefs = await SharedPreferences.getInstance();
 prefs.remove('counter');
 ```
+## redux
+- Store: 状態管理クラス
+- View: 状態値を活用するUI
+- Action: UIからStoreへ状態値の変更を指示するオブジェクト
+- Reducer: 状態値を変更し、UI側に返す関数
+- Middleware: ActionがReducerに渡される前に外部APIと連携し処理を行う

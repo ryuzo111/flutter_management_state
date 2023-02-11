@@ -62,3 +62,10 @@ prefs.remove('counter');
 - Action: UIからStoreへ状態値の変更を指示するオブジェクト
 - Reducer: 状態値を変更し、UI側に返す関数
 - Middleware: ActionがReducerに渡される前に外部APIと連携し処理を行う
+Storeは受け取ったActionオブジェクトに対応したReducerを実行し、再びViewに状態値を渡します。
+
+### キーとなるクラスとメソッド
+- Storeクラス 状態管理クラス
+- StoreProviderクラス　Widgetツリーに沿って状態管理クラスの依存関係を注入するクラス
+- StoreConnectorクラス ラップしたWidgetにStoreへのアクセスを可能にするクラス
+- dispatchメソッド StoreへActionオブジェクトを送るメソッド

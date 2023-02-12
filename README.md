@@ -69,3 +69,5 @@ Storeは受け取ったActionオブジェクトに対応したReducerを実行�
 - StoreProviderクラス　Widgetツリーに沿って状態管理クラスの依存関係を注入するクラス
 - StoreConnectorクラス ラップしたWidgetにStoreへのアクセスを可能にするクラス
 - dispatchメソッド StoreへActionオブジェクトを送るメソッド
+
+#### 1.stateクラス

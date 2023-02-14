@@ -83,8 +83,6 @@ class _ReduxCounterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('rebuild!');
-
     return Scaffold(
       appBar: AppBar(
         title: Text('Redux'),

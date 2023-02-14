@@ -41,7 +41,8 @@ class ResetAction {
   ResetAction();
 }
 
-// Reducerクラス
+// Reducerクラス (状態変更ができうr唯一のクラス)
+// 戻り値が最新のstate
 // Actionオブジェクトを受け取り、それに応じて処理を行い、状態値を返すメソッドをReducerに集約されます。ビジネスロジック
 CounterState counterReducer(CounterState state, action) {
   // type of second argument needs to be `dynamic`, to be able to pass into Store constructor.

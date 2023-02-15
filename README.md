@@ -70,4 +70,5 @@ Storeは受け取ったActionオブジェクトに対応したReducerを実行�
 - StoreConnectorクラス ラップしたWidgetにStoreへのアクセスを可能にするクラス
 - dispatchメソッド StoreへActionオブジェクトを送るメソッド
 
-#### 1.stateクラス
+## Provider
+InheritedWidgetを使った状態管理の実装です。Reduxのようにグローバルに保持するような実装ではなく、下の階層で同じクラスの別のオブジェクトを定義して、利用させることもできます。<br>

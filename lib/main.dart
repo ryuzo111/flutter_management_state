@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_management_state/provider/main.dart';
 
 void main() {
-  runApp(const MyApp());
+  // runApp(const MyApp());
+  runApp(const MyProviderApp());
 }
 
 class MyApp extends StatelessWidget {

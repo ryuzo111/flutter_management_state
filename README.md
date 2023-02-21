@@ -72,3 +72,14 @@ Storeは受け取ったActionオブジェクトに対応したReducerを実行�
 
 ## Provider
 InheritedWidgetを使った状態管理の実装です。Reduxのようにグローバルに保持するような実装ではなく、下の階層で同じクラスの別のオブジェクトを定義して、利用させることもできます。<br>
+親Widgetから子Widgetにデータを受け渡すことができるのです。
+データを渡す先は子widgetであればどこでもOKです。<br>
+
+### インストール
+```
+flutter pub add provider
+```
+ChangeNotifier
+リスナーに変更通知を提供しているクラスです。
+notifyListeners
+リスナーに変更通知を行います。

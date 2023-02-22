@@ -55,7 +55,8 @@ class TextWidgetA extends StatelessWidget {
     print('Built TextWidgetA');
 
     return Center(
-        child: Text('Counter A: ${context.watch<Counter>().countA}',
+        child: Text(
+            'Counter A: ${context.watch<Counter>().countA}', //counterオブジェクトに変更が入ると更新される
             style: const TextStyle(fontSize: 20)));
   }
 }
@@ -68,7 +69,8 @@ class TextWidgetB extends StatelessWidget {
     print('Built TextWidgetB');
 
     return Center(
-        child: Text('Counter B: ${context.read<Counter>().countB}',
+        child: Text(
+            'Counter B: ${context.read<Counter>().countB}', // readを使用しているため、更新があってもリビルドされず、更新されない
             style: const TextStyle(fontSize: 20)));
   }
 }
@@ -82,7 +84,7 @@ class TextWidgetC extends StatelessWidget {
 
     return Center(
         child: Text(
-            'Counter C: ${context.select((Counter counter) => counter.countC)}',
+            'Counter C: ${context.select((Counter counter) => counter.countC)}', //selectはcountCを監視している
             style: const TextStyle(fontSize: 20)));
   }
 }

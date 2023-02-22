@@ -83,3 +83,6 @@ ChangeNotifier
 リスナーに変更通知を提供しているクラスです。
 notifyListeners
 リスナーに変更通知を行います。
+
+## 参考
+* https://github.com/NAOYA-MAEDA-DEV/flutter_provider_sample/blob/main/lib/main.dart

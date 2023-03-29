@@ -86,3 +86,4 @@ notifyListeners
 
 ## 参考
 * https://github.com/NAOYA-MAEDA-DEV/flutter_provider_sample/blob/main/lib/main.dart
+* https://zenn.dev/naoya_maeda/articles/01e51841d6fb8b

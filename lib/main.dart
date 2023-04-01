@@ -3,8 +3,9 @@ import 'package:flutter_management_state/provider/main.dart';
 import 'package:flutter_management_state/inherited_widget/main.dart';
 
 void main() {
-  runApp(const MyApp());
+  // runApp(const MyApp());
   // runApp(const MyProviderApp());
+  runApp(MyInheritedPage(title: "テスト"));
 }
 
 class MyApp extends StatelessWidget {

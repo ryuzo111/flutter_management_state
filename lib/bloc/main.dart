@@ -1,18 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_management_state/provider/main.dart';
 import 'package:flutter_management_state/inherited_widget/main.dart';
-import 'package:flutter_management_state/bloc/main.dart';
+import 'dart:async';
 
-void main() {
-  // runApp(const MyApp());
-  // runApp(const MyProviderApp());
-  // runApp(MyInheritedPage(title: "テスト"));
-  runApp(MyBlocApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+class MyBlocApp extends StatelessWidget {
+  const MyBlocApp({super.key});
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -36,12 +28,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
+  late MyHomePageLogic myHomePageLogic;
+  @override
+  void initState() {
+    super.initState();
+    myHomePageLogic = MyHomePageLogic();
   }
 
   @override
@@ -56,17 +47,30 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const WidgetA(),
-            WidgetB(_counter),
-            WidgetC(_incrementCounter),
+            WidgetB(myHomePageLogic),
+            WidgetC(myHomePageLogic),
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+  }
+}
+
+class MyHomePageLogic {
+  MyHomePageLogic() {
+    _counterController.sink.add(_counter);
+  }
+  final StreamController<int> _counterController = StreamController();
+  int _counter = 0;
+
+  Stream<int> get count => _counterController.stream;
+  void increment() {
+    _counter++;
+    _counterController.sink.add(_counter);
+  }
+
+  void dispose() {
+    _counterController.close();
   }
 }
 
@@ -82,29 +86,33 @@ class WidgetA extends StatelessWidget {
 }
 
 class WidgetB extends StatelessWidget {
-  const WidgetB(this.counter, {Key? key}) : super(key: key);
+  const WidgetB(this.myHomePageLogic, {Key? key}) : super(key: key);
+  final MyHomePageLogic myHomePageLogic;
 
-  final int counter;
   @override
   Widget build(BuildContext context) {
     print('bをびるど');
-    return Text(
-      '$counter',
-      style: Theme.of(context).textTheme.headline4,
-    );
+    return StreamBuilder<int>(
+        stream: myHomePageLogic.count,
+        builder: (context, snapshot) {
+          return Text(
+            '${snapshot.data}',
+            style: Theme.of(context).textTheme.headline4,
+          );
+        });
   }
 }
 
 class WidgetC extends StatelessWidget {
-  const WidgetC(this.increment, {Key? key}) : super(key: key);
-  final Function increment;
+  const WidgetC(this.myHomePageLogic, {Key? key}) : super(key: key);
+  final MyHomePageLogic myHomePageLogic;
   @override
   Widget build(BuildContext context) {
     print('cをびるど');
     return ElevatedButton(
         child: Text('カウンター'),
         onPressed: () {
-          this.increment();
+          myHomePageLogic.increment();
         });
   }
 }

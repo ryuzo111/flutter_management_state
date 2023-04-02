@@ -53,6 +53,7 @@ dev_dependencies:
   shared_preferences: ^2.0.13
   flutter_state_notifier: ^0.7.3
   state_notifier: ^0.7.2+1
+  flutter_riverpod: ^2.3.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

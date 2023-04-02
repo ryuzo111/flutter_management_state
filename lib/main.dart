@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_management_state/provider/main.dart';
 import 'package:flutter_management_state/inherited_widget/main.dart';
 import 'package:flutter_management_state/bloc/main.dart';
+import 'package:flutter_management_state/provider_v2/main.dart';
 
 void main() {
   // runApp(const MyApp());
   // runApp(const MyProviderApp());
   // runApp(MyInheritedPage(title: "テスト"));
-  runApp(MyBlocApp());
+  // runApp(MyBlocApp());
+  runApp(MyProviderV2App());
 }
 
 class MyApp extends StatelessWidget {
